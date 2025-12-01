@@ -6,8 +6,8 @@
 
 ## Capturas
 
-<img src="./capturas gameplay/cap2.png" alt="captura2" width="800" height="300" />
-<img src="./capturas gameplay/cap3.png" alt="captura2" width="800" height="300" />
+<img src="./assets/capturas gameplay/cap2.png" alt="captura2" width="800" height="300" />
+<img src="./assets/capturas gameplay/cap3.png" alt="captura2" width="800" height="300" />
 
 ## Reglas de Juego / Instrucciones
 
@@ -23,3 +23,4 @@ Mucha suerte en tu travesía!
 - Versión de wollok: v1.0.2
 
 - *Una vez terminado, no tenemos problemas en que el repositorio sea público / queremos manternerlo privado
+
