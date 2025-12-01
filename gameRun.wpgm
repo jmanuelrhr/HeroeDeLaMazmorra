@@ -3,7 +3,6 @@ import personajes.*
 import objetos.*
 import nivelManager.*
 import screens.*
-import nivel1.*
 
 program miJuego {
   game.width(25)
@@ -13,4 +12,5 @@ program miJuego {
 
   game.start()
   menuInicial.setup()
+
 }
