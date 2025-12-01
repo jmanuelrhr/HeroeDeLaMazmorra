@@ -21,6 +21,3 @@ Mucha suerte en tu travesía!
 
 - Programacion con objetos 1 | Com. 4 | Universidad Nacional De Hurlingham
 - Versión de wollok: v1.0.2
-
-- *Una vez terminado, no tenemos problemas en que el repositorio sea público / queremos manternerlo privado
-
