@@ -6,8 +6,8 @@
 
 ## Capturas
 
-<img src="./assets/capturas gameplay/cap2.png" alt="captura2" width="800" height="300" />
-<img src="./assets/capturas gameplay/cap3.png" alt="captura2" width="800" height="300" />
+<img src="./assets/capturas gameplay/capt2.png" alt="captura2" width="800" height="300" />
+<img src="./assets/capturas gameplay/capt3.png" alt="captura2" width="800" height="300" />
 
 ## Reglas de Juego / Instrucciones
 
@@ -21,3 +21,4 @@ Mucha suerte en tu travesía!
 
 - Programacion con objetos 1 | Com. 4 | Universidad Nacional De Hurlingham
 - Versión de wollok: v1.0.2
+
