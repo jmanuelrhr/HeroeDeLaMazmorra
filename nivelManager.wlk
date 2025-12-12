@@ -10,6 +10,10 @@ object colisiones {
   method aumentarLimiteIzq() {
     limiteIzq = -1
   }
+
+  method reiniciarLimiteIzq(){
+    limiteIzq = 1
+  }
   
   // colisiones del heroe con el entorno (evita que atraviese las paredes)
   method comprobarBordes() {
@@ -50,12 +54,7 @@ object colisiones {
           heroe.volverAlOrigen()
           nivelManager.reordenarPicos()
           
-          if (!game.hasVisual(cartelNivel2)) {
-            nivelManager.generarEsqueletoMortal()
-          } else {
-            nivelManager.generarEsqueletoMortal()
-            nivelManager.generarEsqueletoMortal()
-          }
+          nivelManager.generarEsqueletoMortal()
           
           if (elemento.atacaConVeneno()) heroe.serEnvenenado()
           
@@ -66,6 +65,7 @@ object colisiones {
           if (heroe.vida() <= 0) {
             game.addVisual(helpScreenBg)
             game.addVisual(gameOver)
+            if(game.hasVisual(heroe)) game.removeVisual(heroe)
             
             if (game.hasVisual(menuKey)) {
               game.removeVisual(menuKey)
@@ -179,7 +179,7 @@ object nivelManager {
   ]
   var murcielagosNivel = []
   var esqueletosEnNivel = []
-  var limiteDeMurcielagosActual = 5
+  var limiteDeMurcielagosActual = 4
   var limiteDeEsqueletosActual = 2
   const picoCorrupto1 = new PicoCorrupto()
   const picoCorrupto2 = new PicoCorrupto()
@@ -253,12 +253,12 @@ object nivelManager {
   }
   
   method reaparecerMurcielagos() {
+    murcielagosNivel.forEach({ m => game.addVisual(m) })
     game.onTick(
       1400,
       "generarUnMurcielago",
       { self.generarMurcielagoDeCueva() }
     )
-    murcielagosNivel.forEach({ m => game.addVisual(m) })
   }
   
   method reiniciarJuego() {
@@ -283,7 +283,6 @@ object nivelManager {
       { pc => if (game.hasVisual(pc)) game.removeVisual(pc) }
     )
     
-    
     // Remover otros visuales de elementos si estan visibles
     if (game.hasVisual(puertaANivel2)) game.removeVisual(puertaANivel2)
     if (game.hasVisual(puertaFinal)) game.removeVisual(puertaFinal)
@@ -294,7 +293,7 @@ object nivelManager {
     self.reiniciarEnemigosYObjetosNivel()
     self.cambiarLimiteDeEsqueletosA(2)
     self.cambiarLimiteDeMurcielagosA(5)
-    
+    colisiones.reiniciarLimiteIzq()
     
     // Se vuelven a instanciar los picos para el nivel 1
     picosNivel = [
@@ -309,7 +308,6 @@ object nivelManager {
       new Pico(),
       new Pico()
     ]
-    
     
     // Reiniciar estado de los picos corruptos y esqueleto corrupto
     picosCorruptosEnNivel = [picoCorrupto1, picoCorrupto2, picoCorrupto3]

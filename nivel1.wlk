@@ -24,8 +24,6 @@ object nivel1 {
       
       nivelManager.generarMurcielagoDeCueva()
       nivelManager.generarMurcielagoDeCueva()
-      nivelManager.generarMurcielagoDeCueva()
-      nivelManager.generarMurcielagoDeCueva()
       
       nivelManager.picosNivel().forEach(
         { p => if (game.hasVisual(p)) game.removeVisual(p) }

@@ -13,14 +13,12 @@ object nivel2 {
     
     corrosion.corromperEsqueletos()
 
-    nivelManager.cambiarLimiteDeEsqueletosA(4)
-    nivelManager.cambiarLimiteDeMurcielagosA(7)
+    nivelManager.cambiarLimiteDeEsqueletosA(3)
+    nivelManager.cambiarLimiteDeMurcielagosA(6)
     
     if (!game.hasVisual(fondoNivel2)) game.addVisual(fondoNivel2)
     
     if (!game.hasVisual(helpKey)) game.addVisual(helpKey)
-    
-    nivelManager.murcielagosNivel().forEach({ m => game.removeVisual(m) })
     
     nivelManager.picosNivel().forEach({ p => game.addVisual(p) })
     nivelManager.reordenarPicos()
@@ -30,7 +28,7 @@ object nivel2 {
     heroe.agregarAlJuego()
     
     nivelManager.generarEsqueletoMortal()
-    nivelManager.generarEsqueletoMortal()
+    nivelManager.esqueletosEnNivel().forEach({ e => if(!game.hasVisual(e)) game.addVisual(e)})
     
     game.addVisual(esqueletoCorrupto)
     if (!game.hasVisual(cartelNivel2)) game.addVisual(cartelNivel2)
